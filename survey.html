@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qualify Your Business - ePulse Investments</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    
+    body {
+      font-family: 'Press Start 2P', cursive, system-ui, sans-serif;
+      background: linear-gradient(135deg, #ff4fd8 0%, #00eaff 100%);
+      min-height: 100vh;
+      margin: 0;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    
+    h1 {
+      font-size: 1.8rem;
+      color: #b4b4b4;
+      text-shadow: 2px 2px 0 #ff4fd8;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .container {
+      max-width: 100%;
+      width: 95%;
+      max-width: 800px;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(255, 79, 216, 0.5);
+      border: 2px solid #00eaff;
+      margin: 1rem;
+      overflow-x: hidden;
+    }
+    
+    .survey-container {
+      margin-top: 1rem;
+    }
+    
+    .step {
+      display: none;
+    }
+    
+    .step.active {
+      display: block;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #00eaff;
+      font-size: 0.7rem;
+    }
+    
+    input, select, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: rgba(180, 180, 180, 0.2);
+      border: 2px solid #ff4fd8;
+      border-radius: 0.5rem;
+      color: #fff;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.7rem;
+      box-sizing: border-box;
+    }
+    
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff4fd8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 0.5rem center;
+      background-size: 1em;
+    }
+    
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #00eaff;
+      box-shadow: 0 0 10px #00eaff;
+    }
+    
+    button {
+      background-color: #ff4fd8;
+      color: #000;
+      border: 2px solid #00eaff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-family: 'Press Start 2P', cursive;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 1rem;
+      font-size: 0.7rem;
+    }
+    
+    button:hover {
+      background-color: #00eaff;
+      color: #000;
+      border-color: #ff4fd8;
+    }
+    
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+    }
+    
+    .progress-bar {
+      height: 15px;
+      background-color: rgba(180, 180, 180, 0.2);
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      border: 1px solid #00eaff;
+    }
+    
+    .progress {
+      height: 100%;
+      background: linear-gradient(90deg, #ff4fd8 0%, #00eaff 100%);
+      transition: width 0.3s ease;
+    }
+    
+    .radio-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 0.7rem;
+    }
+    
+    .radio-option {
+      background-color: rgba(255, 79, 216, 0.2);
+      border: 1px solid #00eaff;
+      border-radius: 0.5rem;
+      padding: 0.7rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 0.65rem;
+    }
+    
+    .radio-option:hover {
+      background-color: rgba(0, 234, 255, 0.2);
+    }
+    
+    .radio-option.selected {
+      background-color: rgba(255, 79, 216, 0.5);
+      border-color: #fff;
+    }
+    
+    .radio-option input {
+      display: none;
+    }
+    
+    .success-message {
+      text-align: center;
+      line-height: 1.5;
+      font-size: 0.7rem;
+    }
+    
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #b4b4b4;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-size: 0.7rem;
+    }
+    
+    .back-link:hover {
+      color: #00eaff;
+    }
+    
+    @media (max-width: 600px) {
+      .radio-options {
+        grid-template-columns: 1fr;
+      }
+      h1 {
+        font-size: 1.4rem;
+      }
+      button {
+        padding: 0.5rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Qualify Your Business</h1>
+    
+    <div class="progress-bar">
+      <div class="progress" id="progressBar" style="width: 20%;"></div>
+    </div>
+    
+    <div class="survey-container">
+      <div class="step active" id="step1">
+        <div class="form-group">
+          <label>Which industry best describes your business?</label>
+          <div class="radio-options">
+            <div class="radio-option" onclick="selectOption(this)">
+              <input type="radio" name="industry" value="tech">
+              Technology
+            </div>
+            <div class="radio-option" onclick="selectOption(this)">
+              <input type="radio" name="industry" value="service">
+              Service
+            </div>
+            <div class="radio-option" onclick="selectOption(this)">
+              <input type="radio" name="industry" value="manufacturing">
+              Manufacturing
+            </div>
+            <div class="radio-option" onclick="selectOption(this)">
+              <input type="radio" name="industry" value="medical">
+              Medical/Healthcare
+            </div>
+            <div class="radio-option" onclick="selectOption(this)">
+              <input type="radio" name="industry" value="other">
+              Other
+            </div>
+          </div>
+        </div>
+        <div class="buttons">
+          <span></span>
+          <button onclick="nextStep(1)">Next</button>
+        </div>
+      </div>
+      
+      <div class="step" id="step2">
+        <div class="form-group">
+          <label>What is your current annual revenue?</label>
+          <select name="revenue" required>
+            <option value="" selected disabled>Select Revenue Range</option>
+            <option value="pre-revenue">Pre-revenue</option>
+            <option value="under-1m">Under $1 million</option>
+            <option value="1m-5m">$1-5 million</option>
+            <option value="5m-20m">$5-20 million</option>
+            <option value="20m-50m">$20-50 million</option>
+            <option value="over-50m">Over $50 million</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>How long has your business been operating?</label>
+          <select name="age" required>
+            <option value="" selected disabled>Select Business Age</option>
+            <option value="not-yet">Not yet launched</option>
+            <option value="under-1">Less than 1 year</option>
+            <option value="1-3">1-3 years</option>
+            <option value="3-5">3-5 years</option>
+            <option value="5-10">5-10 years</option>
+            <option value="over-10">Over 10 years</option>
+          </select>
+        </div>
+        <div class="buttons">
+          <button onclick="prevStep(2)">Back</button>
+          <button onclick="nextStep(2)">Next</button>
+        </div>
+      </div>
+      
+      <div class="step" id="step3">
+        <div class="form-group">
+          <label>What are you seeking from ePulse Investments?</label>
+          <div class="radio-options">
+            <div class="radio-option" onclick="selectOption(this)">
+              <input type="radio" name="goal" value="growth">
+              Growth Capital
+            </div>
+            <div class="radio-option" onclick="selectOption(this)">
+              <input type="radio" name="goal" value="acquisition">
+              Full Acquisition
+            </div>
+            <div class="radio-option" onclick="selectOption(this)">
+              <input type="radio" name="goal" value="partnership">
+              Strategic Partnership
+            </div>
+            <div class="radio-option" onclick="selectOption(this)">
+              <input type="radio" name="goal" value="advice">
+              Advisory Services
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>How much capital are you seeking?</label>
+          <select name="capital" required>
+            <option value="" selected disabled>Select Capital Range</option>
+            <option value="under-500k">Under $500K</option>
+            <option value="500k-2m">$500K-$2 million</option>
+            <option value="2m-10m">$2-10 million</option>
+            <option value="10m-50m">$10-50 million</option>
+            <option value="over-50m">Over $50 million</option>
+          </select>
+        </div>
+        <div class="buttons">
+          <button onclick="prevStep(3)">Back</button>
+          <button onclick="nextStep(3)">Next</button>
+        </div>
+      </div>
+      
+      <div class="step" id="step4">
+        <div class="form-group">
+          <label>Tell us about your business in a few sentences:</label>
+          <textarea name="description" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+          <label>Your Name:</label>
+          <input type="text" name="name" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address:</label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number:</label>
+          <input type="tel" name="phone" required>
+        </div>
+        <div class="buttons">
+          <button onclick="prevStep(4)">Back</button>
+          <button onclick="submitForm()">Submit</button>
+        </div>
+      </div>
+      
+      <div class="step" id="success">
+        <div class="success-message">
+          <h2 style="color: #00eaff; margin-bottom: 1.5rem; font-size: 1.2rem">You're Qualified!</h2>
+          <p>Thank you for submitting your information. Our team of Y2K visionaries will review your submission and get back to you within 48 hours.</p>
+          <p style="margin-top: 1.5rem;">While you wait, check out our existing portfolio to see the types of businesses we partner with.</p>
+          <button onclick="window.location.href='portfolio.html'" style="margin-top: 1.5rem;">View Our Portfolio</button>
+        </div>
+        <a href="index.html" class="back-link">Back to Home</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentStep = 1;
+    const totalSteps = 4;
+    
+    function updateProgressBar() {
+      const progressBar = document.getElementById('progressBar');
+      const progressPercentage = (currentStep / totalSteps) * 100;
+      progressBar.style.width = progressPercentage + '%';
+    }
+    
+    function selectOption(element) {
+      // Clear previous selections in the same group
+      const parent = element.parentElement;
+      const options = parent.querySelectorAll('.radio-option');
+      options.forEach(option => option.classList.remove('selected'));
+      
+      // Select this option
+      element.classList.add('selected');
+      
+      // Check the radio button
+      const radio = element.querySelector('input[type="radio"]');
+      radio.checked = true;
+    }
+    
+    function nextStep(step) {
+      const currentStepElement = document.getElementById('step' + step);
+      const nextStepElement = document.getElementById('step' + (step + 1));
+      
+      // Basic validation
+      if (step === 1) {
+        const industry = document.querySelector('input[name="industry"]:checked');
+        if (!industry) {
+          alert('Please select an industry');
+          return;
+        }
+      } else if (step === 2) {
+        const revenue = document.querySelector('select[name="revenue"]').value;
+        const age = document.querySelector('select[name="age"]').value;
+        if (!revenue || !age) {
+          alert('Please fill out all fields');
+          return;
+        }
+      } else if (step === 3) {
+        const goal = document.querySelector('input[name="goal"]:checked');
+        const capital = document.querySelector('select[name="capital"]').value;
+        if (!goal || !capital) {
+          alert('Please fill out all fields');
+          return;
+        }
+      }
+      
+      currentStepElement.classList.remove('active');
+      nextStepElement.classList.add('active');
+      currentStep++;
+      updateProgressBar();
+    }
+    
+    function prevStep(step) {
+      const currentStepElement = document.getElementById('step' + step);
+      const prevStepElement = document.getElementById('step' + (step - 1));
+      
+      currentStepElement.classList.remove('active');
+      prevStepElement.classList.add('active');
+      currentStep--;
+      updateProgressBar();
+    }
+    
+    function submitForm() {
+      // Validate final step
+      const description = document.querySelector('textarea[name="description"]').value;
+      const name = document.querySelector('input[name="name"]').value;
+      const email = document.querySelector('input[name="email"]').value;
+      const phone = document.querySelector('input[name="phone"]').value;
+      
+      if (!description || !name || !email || !phone) {
+        alert('Please fill out all fields');
+        return;
+      }
+      
+      // In a real app, you would submit the form data to the server here
+      // For now, we'll just show the success message
+      
+      const currentStepElement = document.getElementById('step4');
+      const successElement = document.getElementById('success');
+      
+      currentStepElement.classList.remove('active');
+      successElement.classList.add('active');
+      
+      // Set progress to 100%
+      document.getElementById('progressBar').style.width = '100%';
+    }
+  </script>
+</body>
+</html>

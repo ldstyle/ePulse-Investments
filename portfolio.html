@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Portfolio - ePulse Investments</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    
+    body {
+      font-family: 'Press Start 2P', cursive, system-ui, sans-serif;
+      background: linear-gradient(135deg, #ff4fd8 0%, #00eaff 100%);
+      min-height: 100vh;
+      margin: 0;
+      padding: 0.5rem;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3 {
+      color: #b4b4b4;
+      text-shadow: 2px 2px 0 #ff4fd8;
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      padding-top: 1rem;
+    }
+    
+    h2 {
+      font-size: 1.2rem;
+      color: #ff4fd8;
+      border-bottom: 2px solid #00eaff;
+      padding-bottom: 0.5rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(255, 79, 216, 0.5);
+      border: 2px solid #00eaff;
+      overflow: hidden;
+    }
+    
+    .category {
+      margin-bottom: 2rem;
+    }
+    
+    .companies {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .company-card {
+      background-color: rgba(255, 79, 216, 0.2);
+      border: 1px solid #00eaff;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+    }
+    
+    .company-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 234, 255, 0.3);
+    }
+    
+    .company-name {
+      color: #ff4fd8;
+      font-size: 0.85rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+    
+    .company-desc {
+      color: #00eaff;
+      font-size: 0.65rem;
+      line-height: 1.5;
+    }
+    
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      font-size: 0.6rem;
+      color: #b4b4b4;
+    }
+    
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 2rem;
+      color: #b4b4b4;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 0.75rem;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      border: 2px solid #00eaff;
+      width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+      transition: all 0.3s;
+    }
+    
+    .back-link:hover {
+      background-color: #ff4fd8;
+      color: #000;
+    }
+    
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .nav a {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #00eaff;
+      padding: 0.5rem;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      border: 1px solid #ff4fd8;
+      transition: all 0.3s;
+      font-size: 0.7rem;
+    }
+    
+    .nav a:hover {
+      background-color: #ff4fd8;
+      color: #000;
+    }
+    
+    @media (max-width: 768px) {
+      .companies {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      h2 {
+        font-size: 1rem;
+      }
+      .company-name {
+        font-size: 0.7rem;
+      }
+      .company-desc {
+        font-size: 0.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Our Investment Portfolio</h1>
+    
+    <div class="nav">
+      <a href="#tech">Tech</a>
+      <a href="#service">Service</a>
+      <a href="#manufacturing">Manufacturing</a>
+      <a href="#medical">Medical</a>
+    </div>
+    
+    <div id="tech" class="category">
+      <h2>Tech Businesses</h2>
+      <div class="companies">
+        <div class="company-card">
+          <h3 class="company-name">ByteWave Systems</h3>
+          <p class="company-desc">Cloud infrastructure provider specializing in Y2K-inspired architecture for modern applications.</p>
+          <div class="stats">
+            <span>Acquired: 2023</span>
+            <span>Growth: 145%</span>
+          </div>
+        </div>
+        
+        <div class="company-card">
+          <h3 class="company-name">PixelPulse Games</h3>
+          <p class="company-desc">Game studio creating immersive experiences with nostalgic aesthetics but cutting-edge gameplay.</p>
+          <div class="stats">
+            <span>Invested: 2024</span>
+            <span>Growth: 210%</span>
+          </div>
+        </div>
+        
+        <div class="company-card">
+          <h3 class="company-name">CyberSync Solutions</h3>
+          <p class="company-desc">Cybersecurity firm using AI to protect digital assets with a unique visual interface inspired by Y2K-era sci-fi films.</p>
+          <div class="stats">
+            <span>Acquired: 2022</span>
+            <span>Growth: 180%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="service" class="category">
+      <h2>Service Businesses</h2>
+      <div class="companies">
+        <div class="company-card">
+          <h3 class="company-name">RetroFit Logistics</h3>
+          <p class="company-desc">Last-mile delivery service utilizing electric vehicles with retrofuturistic designs.</p>
+          <div class="stats">
+            <span>Invested: 2023</span>
+            <span>Growth: 95%</span>
+          </div>
+        </div>
+        
+        <div class="company-card">
+          <h3 class="company-name">Millennium Consulting</h3>
+          <p class="company-desc">Business transformation consultancy helping traditional companies navigate digital pivots.</p>
+          <div class="stats">
+            <span>Acquired: 2024</span>
+            <span>Growth: 120%</span>
+          </div>
+        </div>
+        
+        <div class="company-card">
+          <h3 class="company-name">VaporWave Marketing</h3>
+          <p class="company-desc">Digital marketing agency specializing in nostalgic yet futuristic campaigns.</p>
+          <div class="stats">
+            <span>Invested: 2022</span>
+            <span>Growth: 155%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="manufacturing" class="category">
+      <h2>Manufacturing Businesses</h2>
+      <div class="companies">
+        <div class="company-card">
+          <h3 class="company-name">NeoPlastics</h3>
+          <p class="company-desc">Sustainable materials manufacturer creating biodegradable plastics with metallic finishes.</p>
+          <div class="stats">
+            <span>Invested: 2021</span>
+            <span>Growth: 85%</span>
+          </div>
+        </div>
+        
+        <div class="company-card">
+          <h3 class="company-name">ChromeWorks</h3>
+          <p class="company-desc">Custom metal fabricator specializing in high-polish finishes for architectural applications.</p>
+          <div class="stats">
+            <span>Acquired: 2023</span>
+            <span>Growth: 70%</span>
+          </div>
+        </div>
+        
+        <div class="company-card">
+          <h3 class="company-name">Fusion Robotics</h3>
+          <p class="company-desc">Robotic assembly systems that combine Y2K design language with state-of-the-art AI.</p>
+          <div class="stats">
+            <span>Invested: 2024</span>
+            <span>Growth: 130%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="medical" class="category">
+      <h2>Medical Businesses</h2>
+      <div class="companies">
+        <div class="company-card">
+          <h3 class="company-name">QuantumHealth</h3>
+          <p class="company-desc">Telehealth platform with futuristic diagnostics visualization and an interface inspired by Y2K medical sci-fi.</p>
+          <div class="stats">
+            <span>Invested: 2023</span>
+            <span>Growth: 200%</span>
+          </div>
+        </div>
+        
+        <div class="company-card">
+          <h3 class="company-name">NeuroByte</h3>
+          <p class="company-desc">Neural interface technology that helps patients with mobility issues through brain-computer interfaces.</p>
+          <div class="stats">
+            <span>Acquired: 2022</span>
+            <span>Growth: 165%</span>
+          </div>
+        </div>
+        
+        <div class="company-card">
+          <h3 class="company-name">ChromaScan</h3>
+          <p class="company-desc">Medical imaging company whose color-enhanced diagnostic tools give clinicians unprecedented insight.</p>
+          <div class="stats">
+            <span>Invested: 2024</span>
+            <span>Growth: 110%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <a href="index.html" class="back-link">Back to Home</a>
+  </div>
+</body>
+</html>
