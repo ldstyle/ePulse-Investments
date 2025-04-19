@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ePulse Investments - Y2K Futurism VC</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    
+    body {
+      font-family: 'Press Start 2P', cursive, system-ui, sans-serif;
+      background: linear-gradient(135deg, #ff4fd8 0%, #00eaff 100%);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      color: #b4b4b4;
+      text-shadow: 2px 2px 0 #ff4fd8;
+      margin-bottom: 1rem;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+      color: #ff4fd8;
+      margin-bottom: 2rem;
+    }
+    
+    .container {
+      max-width: 800px;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(255, 79, 216, 0.5);
+      border: 2px solid #00eaff;
+    }
+    
+    p {
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+      color: #00eaff;
+    }
+    
+    .button {
+      background-color: #b4b4b4;
+      color: #ff4fd8;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-weight: bold;
+      transition: all 0.3s;
+      display: inline-block;
+      margin: 0.5rem;
+      border: 2px solid #00eaff;
+    }
+    
+    .button:hover {
+      background-color: #ff4fd8;
+      color: #b4b4b4;
+    }
+    
+    .section {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    
+    .card {
+      background-color: rgba(255, 79, 216, 0.2);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid #00eaff;
+    }
+    
+    .card h3 {
+      color: #ff4fd8;
+      margin-top: 0;
+      font-size: 0.9rem;
+    }
+    
+    .card p {
+      font-size: 0.7rem;
+      margin-bottom: 0;
+    }
+    
+    footer {
+      margin-top: 2rem;
+      font-size: 0.75rem;
+      color: #b4b4b4;
+    }
+    
+    @media (max-width: 600px) {
+      .section {
+        grid-template-columns: 1fr;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ePulse Investments</h1>
+    <h2>Fueling the Future, Y2K Style</h2>
+    
+    <p>We invest in tomorrow's icons—tech, service, manufacturing, and medical businesses in the lower and middle market. Our pulse? Futurism, fun, and fearless capital.</p>
+    
+    <div>
+      <a href="portfolio.html" class="button">See Our Portfolio</a>
+      <a href="survey.html" class="button">Contact Us</a>
+    </div>
+    
+    <div class="section" id="portfolio">
+      <div class="card">
+        <h3>Tech Businesses</h3>
+        <p>From code to cloud, we back innovators who are rewriting the digital playbook.</p>
+      </div>
+      <div class="card">
+        <h3>Service Businesses</h3>
+        <p>Energizing the service sector with capital, creativity, and Y2K spirit.</p>
+      </div>
+      <div class="card">
+        <h3>Manufacturing Businesses</h3>
+        <p>Powering the makers, movers, and shakers of tomorrow's world.</p>
+      </div>
+      <div class="card">
+        <h3>Medical Businesses</h3>
+        <p>Fueling breakthroughs in health, wellness, and medical innovation.</p>
+      </div>
+    </div>
+    
+    <div class="section" id="contact">
+      <div style="grid-column: span 2;">
+        <h3>Contact ePulse</h3>
+        <p>Ready to ride the wave of the future? Reach out to our team of Y2K visionaries today!</p>
+        <a href="survey.html" class="button">Qualify Your Business</a>
+      </div>
+    </div>
+    
+    <footer>
+      &copy; 2025 ePulse Investments. All Rights Reserved.
+    </footer>
+  </div>
+</body>
+</html>
